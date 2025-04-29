@@ -258,23 +258,23 @@ viewPostList metadata selectedTag =
                         ]
                         [ Html.text "All Posts" ]
 
-        allPostsLink =
-            case selectedTag of
-                Just _ ->
-                    Route.Blog
-                        |> Route.link
-                            []
-                            [ Html.h3
-                                [ Attrs.class " hover:text-green-500 font-bold uppercase"
-                                ]
-                                [ Html.text "All Posts" ]
-                            ]
+        -- allPostsLink =
+        --     case selectedTag of
+        --         Just _ ->
+        --             Route.Blog
+        --                 |> Route.link
+        --                     []
+        --                     [ Html.h3
+        --                         [ Attrs.class " hover:text-green-500 font-bold uppercase"
+        --                         ]
+        --                         [ Html.text "All Posts" ]
+        --                     ]
 
-                Nothing ->
-                    Html.h3
-                        [ Attrs.class "text-yellow-500 font-bold uppercase"
-                        ]
-                        [ Html.text "All Posts" ]
+                -- Nothing ->
+                --     Html.h3
+                --         [ Attrs.class "text-yellow-500 font-bold uppercase"
+                --         ]
+                --         [ Html.text "All Posts" ]
     in
     [ Html.div [ Attrs.class "pb-6 pt-6" ] [ header ]
     , Html.div [ Attrs.class "flex sm:space-x-2 md:space-x-12" ]
@@ -282,7 +282,7 @@ viewPostList metadata selectedTag =
             [ Html.div
                 [ Attrs.class "py-4 px-6"
                 ]
-                [ allPostsLink
+                [ --allBlogpostsLink
                 ]
             ]
         , Html.div [] [ Html.ul [] <| List.map (\article -> Html.li [ Attrs.class "py-5" ] [ viewBlogpostMetadata article ]) metadata ]

@@ -1,5 +1,6 @@
 ---
 title: "Elm Weekly"
+slug: "elm-weekly"
 description: "Capybara House has been featured on Elm Weekly"
 published: "2024-05-21"
 ---

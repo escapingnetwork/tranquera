@@ -1,6 +1,6 @@
 ---
 title: "Tech Stack Showcase"
-slug: "chat-gpt-testing-blogpost"
+slug: "tech-stack"
 description: "Three months after launching Capybara House, Tranquera’s innovative accommodation service, we’re excited to share our updated tech stack. From a minimal MVP, we’ve embraced continuous improvement to enhance scalability and elevate the client experience. This is just the start of our journey to deliver cutting-edge solutions for international students and landlords!"
 published: "2024-05-11"
 ---

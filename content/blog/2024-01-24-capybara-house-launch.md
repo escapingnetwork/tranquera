@@ -1,5 +1,6 @@
 ---
 title: Capybara House Launch
+slug: "capybara-house-launch"
 description: "We’re thrilled to introduce Capybara House, a unique accommodation service by Tranquera designed to connect international students with welcoming homes. More than just a place to stay, Capybara House fosters community, cultural exchange, and seamless connections between landlords and students. Join us in redefining shared living—spread the word and help build a global community!"
 published: "2024-01-24"
 ---

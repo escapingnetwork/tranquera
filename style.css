@@ -1,0 +1,323 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@800;900&display=swap');
+@import "tailwindcss";
+@config "./tailwind.config.js";
+
+@source "./app/**/*.{elm,ts,js}";
+@source "./src/**/*.{elm,ts,js}";
+@source "./index.html";
+
+@layer base {
+  html {
+    font-family: 'Inter', monospace;
+  }
+  body {
+    @apply antialiased;
+  }
+}
+
+/* Elm Syntax Highlight CSS */
+pre.elmsh {
+  padding: 10px;
+  margin: 0;
+  text-align: left;
+  overflow: auto;
+}
+
+code.elmsh {
+  padding: 0;
+}
+
+.elmsh-line:before {
+  content: attr(data-elmsh-lc);
+  display: inline-block;
+  text-align: right;
+  width: 40px;
+  padding: 0 20px 0 0;
+  opacity: 0.3;
+}
+
+/* Custom Styles from HTML */
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+
+.project-card {
+  position: relative;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+.project-card:hover {
+  transform: translateY(-10px);
+}
+.project-card:focus {
+  outline: 2px solid white;
+  outline-offset: 4px;
+}
+
+.nav-link {
+  position: relative;
+}
+.nav-link:hover::after,
+.nav-link:focus::after {
+  width: 100%;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  transition: width 0.3s ease;
+}
+
+.second-word-house {
+  position: relative;
+  display: inline-block;
+  z-index: 10;
+}
+.second-word-house::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: oklch(0.795 0.184 86.047);
+  transition: width 0.4s ease;
+  z-index: -1;
+}
+.project-card:hover .second-word-house::before,
+.project-card:focus .second-word-house::before {
+  width: 100%;
+}
+.project-card:hover .second-word-house,
+.project-card:focus .second-word-house,
+.project-card.in-view .second-word-house {
+  color: black;
+}
+
+.second-word-school {
+  position: relative;
+  display: inline-block;
+  z-index: 10;
+}
+.second-word-school::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: oklch(0.795 0.184 140);
+  transition: width 0.4s ease;
+  z-index: -1;
+}
+.project-card:hover .second-word-school::before,
+.project-card:focus .second-word-school::before {
+  width: 100%;
+}
+.project-card:hover .second-word-school,
+.project-card:focus .second-word-school,
+.project-card.in-view .second-word-school {
+  color: black;
+}
+
+.description-house,
+.description-school {
+  position: relative;
+  display: inline-block;
+  z-index: 10;
+}
+.project-card:hover .description-house,
+.project-card:focus .description-house,
+.project-card:hover .description-school,
+.project-card:focus .description-school {
+  color: black;
+}
+
+.card-content-house {
+  position: relative;
+  z-index: 10;
+}
+.card-content-house::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: oklch(0.795 0.184 86.047);
+  transition: width 0.4s ease;
+  z-index: -1;
+}
+.project-card.in-view .card-content-house::before,
+.project-card:hover .card-content-house::before,
+.project-card:focus .card-content-house::before {
+  width: 100%;
+}
+
+.card-content-school {
+  position: relative;
+  z-index: 10;
+}
+.card-content-school::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: oklch(0.795 0.184 140);
+  transition: width 0.4s ease;
+  z-index: -1;
+}
+.project-card.in-view .card-content-school::before,
+.project-card:hover .card-content-school::before,
+.project-card:focus .card-content-school::before {
+  width: 100%;
+}
+
+.title-capybara {
+  position: relative;
+  z-index: 20;
+  display: block;
+}
+
+.trqa-outline {
+  color: black;
+  text-shadow: -2px -2px 0 white, 2px -2px 0 white, -2px 2px 0 white, 2px 2px 0 white,
+               -2px 0px 0 white, 2px 0px 0 white, 0px -2px 0 white, 0px 2px 0 white;
+}
+
+/* Hamburger Menu Styles */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  cursor: pointer;
+}
+.hamburger span {
+  width: 100%;
+  height: 3px;
+  transition: all 0.3s ease;
+}
+.mobile-menu {
+  display: none;
+}
+.mobile-menu.active {
+  display: flex;
+}
+
+/* Media Queries for Mobile Responsiveness */
+@media (min-width: 769px) {
+  .card-content-house, .card-content-school {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .card-content-house h3, .card-content-school h3 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .description-house, .description-school {
+    width: 50%;
+    padding-left: 4rem;
+    padding-right: 2rem;
+  }
+  .second-word-house, .second-word-school {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+  .desktop-nav {
+    display: none;
+  }
+  .mobile-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    padding: 1rem;
+    z-index: 40;
+  }
+  .mobile-menu li {
+    margin: 1rem 0;
+  }
+  .hero-bg {
+    height: 100vh;
+  }
+  #hero-heading {
+    font-size: 12vw;
+  }
+  .hero-section p {
+    font-size: 1.25rem;
+    max-width: 90%;
+  }
+  .project-card {
+    min-height: auto;
+    padding: 2rem 0;
+  }
+  .card-content-house, .card-content-school {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .title-capybara, .second-word-house, .second-word-school {
+    font-size: 10vw;
+    display: inline-block;
+  }
+  .description-house, .description-school {
+    font-size: 1.125rem;
+    max-width: 90%;
+    padding: 1rem 0;
+  }
+  #projects-heading, #contact-heading {
+    font-size: 10vw;
+  }
+  .contact-section p {
+    font-size: 1.125rem;
+    max-width: 90%;
+  }
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #hero-heading {
+    font-size: 15vw;
+  }
+  .title-capybara, .second-word-house, .second-word-school {
+    font-size: 12vw;
+  }
+  .project-card {
+    padding: 1.5rem 0;
+  }
+}
+
+/* Animation Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+.animation-delay-200 { animation-delay: 0.2s; }
+.animation-delay-400 { animation-delay: 0.4s; }
+

@@ -31,7 +31,7 @@ seoHeaders =
         , mimeType = Nothing
         }
     , locale = Nothing
-    , description = "desc"
+    , description = "Discover Tranquera.’s innovative projects: Capybara House for student accommodation and Capybara School for English courses in Dublin."
     , title = "Tranquera"
     }
     |> Seo.website
@@ -68,7 +68,7 @@ viewMenu showMenu onMenuToggle =
                 ]
 
         sideMenuItems = 
-                [ Html.ul [ Attrs.class "flex flex-col space-y-4 text-base uppercase tracking-widest" ]
+                [ Html.ul [ Attrs.class "flex flex-col space-y-4 ml-5 uppercase tracking-widest text-xl" ]
                     [  Html.a [ Attrs.href "http://tranquera.co/#projects", Attrs.class "nav-link" ] [ Html.text "Projects" ] 
                     ,  Html.a [ Attrs.href "http://tranquera.co/#news", Attrs.class "nav-link" ] [ Html.text "News" ] 
                     ,  Html.a [ Attrs.href "http://tranquera.co/#contact", Attrs.class "nav-link" ] [ Html.text "Contact" ] 

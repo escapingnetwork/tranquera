@@ -13,7 +13,6 @@ import BackendTask exposing (BackendTask)
 import BackendTask.Env
 import BackendTask.File as File
 import BackendTask.Glob as Glob
-import Content.About exposing (Author)
 import Date exposing (Date)
 import Dict exposing (Dict)
 import FatalError exposing (FatalError)
@@ -43,7 +42,6 @@ type alias Metadata =
     , image : Maybe String
     , description : Maybe String
     , tags : List String
-    , authors : List Author
     , status : Status
     , readingTimeInMin : Int
     }
@@ -101,8 +99,8 @@ decodeStatus =
         (Decode.maybe (Decode.field "status" Decode.string))
 
 
-metadataDecoder : Dict String Author -> String -> Decoder Metadata
-metadataDecoder authorsDict slug =
+metadataDecoder : String -> Decoder Metadata
+metadataDecoder slug =
     Decode.succeed Metadata
         |> Decode.andMap (Decode.field "title" Decode.string)
         |> Decode.andMap
@@ -116,12 +114,6 @@ metadataDecoder authorsDict slug =
             (Decode.map
                 (Maybe.withDefault [])
                 (Decode.maybe (Decode.field "tags" <| Decode.list Decode.string))
-            )
-        |> Decode.andMap
-            (Decode.map
-                (Maybe.withDefault [ "default" ])
-                (Decode.maybe (Decode.field "authors" <| Decode.list Decode.string))
-                |> Decode.map (\authors -> List.filterMap (\authorSlug -> Dict.get authorSlug authorsDict) authors)
             )
         |> Decode.andMap decodeStatus
         |> Decode.andMap (Decode.succeed 1)
@@ -172,15 +164,15 @@ allBlogposts =
                 _ ->
                     metadata
     in
-    BackendTask.map2
-        (\blogposts authorsDict ->
+    BackendTask.map
+        (\blogposts ->
             List.map
                 (\file ->
                     file.filePath
                         |> File.bodyWithFrontmatter
                             (\markdownString ->
                                 Decode.map2 (\metadata body -> Blogpost metadata body Nothing Nothing)
-                                    (metadataDecoder authorsDict file.slug)
+                                    (metadataDecoder  file.slug)
                                     (Decode.succeed markdownString)
                             )
                         |> BackendTask.map (\blogpost -> { blogpost | metadata = addDraftTag blogpost.metadata })
@@ -189,7 +181,6 @@ allBlogposts =
                 blogposts
         )
         blogpostFiles
-        Content.About.allAuthors
         |> BackendTask.resolve
         |> BackendTask.andThen
             (\blogposts ->

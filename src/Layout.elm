@@ -61,17 +61,17 @@ viewMenu showMenu onMenuToggle =
     let
         mainMenuItems = 
                 [ Html.ul [ Attrs.class "hidden sm:block space-x-10 text-base uppercase tracking-widest" ]
-                    [  Html.a [ Attrs.href "http://localhost:1234/#projects", Attrs.class "nav-link" ] [ Html.text "Projects" ] 
-                    ,  Html.a [ Attrs.href "http://localhost:1234/#news", Attrs.class "nav-link" ] [ Html.text "News" ] 
-                    ,  Html.a [ Attrs.href "http://localhost:1234/#contact", Attrs.class "nav-link" ] [ Html.text "Contact" ] 
+                    [  Html.a [ Attrs.href "http://tranquera.co/#projects", Attrs.class "nav-link" ] [ Html.text "Projects" ] 
+                    ,  Html.a [ Attrs.href "http://tranquera.co/#news", Attrs.class "nav-link" ] [ Html.text "News" ] 
+                    ,  Html.a [ Attrs.href "http://tranquera.co/#contact", Attrs.class "nav-link" ] [ Html.text "Contact" ] 
                     ]
                 ]
 
         sideMenuItems = 
                 [ Html.ul [ Attrs.class "flex flex-col space-y-4 text-base uppercase tracking-widest" ]
-                    [  Html.a [ Attrs.href "http://localhost:1234/#projects", Attrs.class "nav-link" ] [ Html.text "Projects" ] 
-                    ,  Html.a [ Attrs.href "http://localhost:1234/#news", Attrs.class "nav-link" ] [ Html.text "News" ] 
-                    ,  Html.a [ Attrs.href "http://localhost:1234/#contact", Attrs.class "nav-link" ] [ Html.text "Contact" ] 
+                    [  Html.a [ Attrs.href "http://tranquera.co/#projects", Attrs.class "nav-link" ] [ Html.text "Projects" ] 
+                    ,  Html.a [ Attrs.href "http://tranquera.co/#news", Attrs.class "nav-link" ] [ Html.text "News" ] 
+                    ,  Html.a [ Attrs.href "http://tranquera.co/#contact", Attrs.class "nav-link" ] [ Html.text "Contact" ] 
                     ]
                 ]
     in

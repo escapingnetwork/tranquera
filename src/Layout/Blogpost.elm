@@ -123,7 +123,7 @@ viewBlogpost { metadata, body, previousPost, nextPost } =
         --     )
         --     metadata.description
         , Html.article
-            [ Attrs.class "prose lg:prose-xl text-white mt-8" ]
+            [ Attrs.class "prose lg:prose-xl text-black dark:text-white mt-8" ]
             (Markdown.blogpostToHtml body)
         , Html.div
             [ Attrs.class "mt-8 grid grid-cols-1 text-sm font-medium sm:grid-cols-2 sm:text-base bottom-0" ]

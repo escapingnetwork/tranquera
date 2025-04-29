@@ -110,7 +110,7 @@ blogpostRenderer =
                     ]
         , paragraph =
             \children ->
-                Html.p [ Attrs.class "prose prose-invert text-white" ] children
+                Html.p [ Attrs.class "prose prose-invert text-black dark:text-white " ] children
         , emphasis =
             \children ->
                 Html.em [ Attrs.class "italic " ] children

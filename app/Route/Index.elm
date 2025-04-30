@@ -121,7 +121,7 @@ newsSection blogpostMetadata =
 contactSection =
         Html.node "section"
             [ Attrs.id "contact", Attrs.class "py-32  contact-section", Attrs.attribute "aria-labelledby" "contact-heading" ]
-            [ Html.div [ Attrs.class "container mx-auto px-8 text-center" ]
+            [ Html.div [ Attrs.class "container mx-auto text-center" ]
                 [ Html.h2 [ Attrs.id "contact-heading", Attrs.class "text-6xl font-extrabold tracking-tighter mb-10" ]
                     [ Html.text "Contact" ]
                 , Html.p [ Attrs.class "text-xl tracking-wide max-w-xl mx-auto mb-10" ]
@@ -153,7 +153,7 @@ projectCard title description url type_ =
         Html.article []
             [ Html.a [ Attrs.href url, Attrs.attribute "target" "_blank", Attrs.class ("project-card flex items-center group"), Attrs.attribute "aria-label" ("Visit " ++ title) ]
                 [ Html.div [ Attrs.class (cardContentClass ++ " flex flex-col md:flex-row items-start w-full") ]
-                    [ Html.h3 [ Attrs.class "text-7xl font-extrabold tracking-tighter w-full md:w-1/2 m-10" ]
+                    [ Html.h3 [ Attrs.class "text-7xl font-extrabold tracking-tighter w-full md:w-1/2 m-10 space-x-5" ]
                         [ Html.span [ Attrs.class "title-capybara" ] [ Html.text "Capybara" ]
                         , Html.span [ Attrs.class secondWordClass ] [ Html.text (if type_ == "house" then "House" else "School") ]
                         ]

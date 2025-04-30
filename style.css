@@ -96,11 +96,6 @@ code.elmsh {
 .project-card:focus .second-word-house::before {
   width: 100%;
 }
-.project-card:hover .second-word-house,
-.project-card:focus .second-word-house,
-.project-card.in-view .second-word-house {
-  color: black;
-}
 
 .second-word-school {
   position: relative;
@@ -122,23 +117,12 @@ code.elmsh {
 .project-card:focus .second-word-school::before {
   width: 100%;
 }
-.project-card:hover .second-word-school,
-.project-card:focus .second-word-school,
-.project-card.in-view .second-word-school {
-  color: black;
-}
 
 .description-house,
 .description-school {
   position: relative;
   display: inline-block;
   z-index: 10;
-}
-.project-card:hover .description-house,
-.project-card:focus .description-house,
-.project-card:hover .description-school,
-.project-card:focus .description-school {
-  color: black;
 }
 
 .card-content-house {

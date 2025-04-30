@@ -134,9 +134,9 @@ projectCard title description url type_ =
         let
             secondWordClass =
                 if type_ == "house" then
-                    "second-word-house transition-colors"
+                    "second-word-house dark:group-hover:text-black group-hover:text-white  "
                 else
-                    "second-word-school transition-colors"
+                    "second-word-school dark:group-hover:text-black group-hover:text-white "
 
             cardContentClass =
                 if type_ == "house" then
@@ -146,12 +146,12 @@ projectCard title description url type_ =
 
             descClass =
                 if type_ == "house" then
-                    "description-house"
+                    "description-house dark:group-hover:text-black group-hover:text-white "
                 else
-                    "description-school"
+                    "description-school dark:group-hover:text-black group-hover:text-white "
         in
         Html.article []
-            [ Html.a [ Attrs.href url, Attrs.attribute "target" "_blank", Attrs.class ("project-card flex items-center"), Attrs.attribute "aria-label" ("Visit " ++ title) ]
+            [ Html.a [ Attrs.href url, Attrs.attribute "target" "_blank", Attrs.class ("project-card flex items-center group"), Attrs.attribute "aria-label" ("Visit " ++ title) ]
                 [ Html.div [ Attrs.class (cardContentClass ++ " flex flex-col md:flex-row items-start w-full") ]
                     [ Html.h3 [ Attrs.class "text-7xl font-extrabold tracking-tighter w-full md:w-1/2 m-10" ]
                         [ Html.span [ Attrs.class "title-capybara" ] [ Html.text "Capybara" ]

@@ -220,7 +220,7 @@ viewListItem metadata =
                     , Html.Extra.viewMaybe
                         (\description ->
                             Html.div
-                                [ Attrs.class "prose text-xl max-w-none bg-white dark:bg-black dark:text-white"
+                                [ Attrs.class "prose text-xl max-w-none bg-white dark:bg-black text-black dark:text-white"
                                 ]
                                 [ Html.text description ]
                         )

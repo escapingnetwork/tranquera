@@ -81,17 +81,7 @@ code.elmsh {
   display: inline-block;
   z-index: 10;
 }
-.second-word-house::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: oklch(0.795 0.184 86.047);
-  transition: width 0.4s ease;
-  z-index: -1;
-}
+
 .project-card:hover .second-word-house::before,
 .project-card:focus .second-word-house::before {
   width: 100%;
@@ -102,17 +92,7 @@ code.elmsh {
   display: inline-block;
   z-index: 10;
 }
-.second-word-school::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 100%;
-  background-color: oklch(0.795 0.184 140);
-  transition: width 0.4s ease;
-  z-index: -1;
-}
+
 .project-card:hover .second-word-school::before,
 .project-card:focus .second-word-school::before {
   width: 100%;
@@ -129,6 +109,19 @@ code.elmsh {
   position: relative;
   z-index: 10;
 }
+
+.card-content-house-visible {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: oklch(0.795 0.184 86.047);
+  transition: width 0.4s ease;
+  z-index: -1;
+}
+
 .card-content-house::before {
   content: '';
   position: absolute;
@@ -150,6 +143,18 @@ code.elmsh {
   position: relative;
   z-index: 10;
 }
+.card-content-school-visible {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: oklch(0.795 0.184 140);
+  transition: width 0.4s ease;
+  z-index: -1;
+}
+
 .card-content-school::before {
   content: '';
   position: absolute;

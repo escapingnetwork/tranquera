@@ -11,8 +11,7 @@ export default {
 <link rel="mask-icon" href="/media/logo.svg" color="#000000">
 <link rel="apple-touch-icon" href="logo-180.png">
 <meta name="generator" content="elm-pages v${context.cliVersion}" />
-<script defer data-domain="tranquera.co" src="https://plausible.escaping.network/js/script.outbound-links.js"></script>
-
+<script defer data-domain="tranquera.co" src="https://plausible.escaping.network/js/script.js"></script>
 `;
 //  <link rel="manifest" href="manifest.json">
 
